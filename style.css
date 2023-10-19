@@ -1,0 +1,162 @@
+:root {
+  --crl-primary: hsl(158, 36%, 37%);
+  --crl-secondary: hsl(158, 36%, 25%);
+  --crl-bg: hsl(30, 38%, 92%);
+  --crl-dark: hsl(212, 21%, 14%);
+  --crk-gray: hsl(228, 12%, 48%);
+  --crl-white: hsl(0, 0%, 100%);
+
+  --ff-primary: "Montserrat", sans-serif;
+  --ff-secondary: "Fraunces", serif;
+  --fw-regular: 500;
+  --fw-bold: 700;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--ff-primary);
+  font-size: 1.4rem;
+  line-height: 1.7;
+  background-color: var(--crl-bg);
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
+main {
+  display: grid;
+  place-content: center;
+  min-height: 100vh;
+  margin: 1.8rem;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 600px;
+  background-color: var(--crl-white);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.section-content {
+  display: grid;
+  padding: 3rem;
+}
+
+.heading-tertiary {
+  text-transform: uppercase;
+  color: var(--crk-gray);
+  font-size: 1.2rem;
+  font-weight: var(--fw-regular);
+  letter-spacing: 5px;
+}
+
+.heading-primary {
+  font-family: var(--ff-secondary);
+  color: var(--crl-dark);
+  font-size: 3.2rem;
+  line-height: 1;
+}
+
+.content-description {
+  font-size: 1.4rem;
+  color: var(--crk-gray);
+}
+
+.price {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.current-price {
+  font-size: 3.2rem;
+  color: var(--crl-primary);
+  font-family: var(--ff-secondary);
+  font-weight: var(--fw-bold);
+}
+
+.original-price {
+  color: var(--crk-gray);
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.4rem;
+  cursor: pointer;
+  background-color: var(--crl-primary);
+  color: var(--crl-white);
+  font-weight: var(--fw-bold);
+  border: none;
+  border-radius: 10px;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--crl-secondary);
+}
+
+@media (max-width: 640px) {
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .section-content {
+    gap: 2rem;
+  }
+
+  .btn {
+    padding: 1.8rem 3.6rem;
+  }
+
+  .original-price {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  html {
+    font-size: 60%;
+  }
+
+  .heading-primary {
+    font-size: 3rem;
+  }
+
+  .current-price {
+    font-size: 3rem;
+  }
+}
